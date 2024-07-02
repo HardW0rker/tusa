@@ -38,6 +38,7 @@ const Frame = styled.div<{type:Itype,size:Isize,disable:boolean | undefined}>`
         color: ${({ disable }) => !disable ? "var(--text-primary)" : "var(--text-disable)"};
         font-size: 17px;
         letter-spacing: 0.17px;
+        line-height: 24px;
     }
     svg{
         position:relative;
@@ -49,9 +50,9 @@ const Frame = styled.div<{type:Itype,size:Isize,disable:boolean | undefined}>`
 
 `
 
-function Button({type, size, text, icon,disable }:IButton) {
+function Button({type, size, text, icon,disable,clickEvent }:IButton) {
   return (
-    <Frame type = {type} size = {size} disable={disable}>
+    <Frame type = {type} size = {size} disable={disable} onClick={clickEvent}>
         {icon ? icon : null}
         {text ? <p>{text}</p> : null}
     </Frame>

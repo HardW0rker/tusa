@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from "./views/homePage/homePage"
 
 const Wraper = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height:100vh;
   display: flex;
   flex-direction:column;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import {IMultiSelectList,IOption,IMultiSelectListItem,Isize} from "./interface"
-import Checkbox from '../checkbox/checkbox';
+import {IDropDownList,IOption,IDropDownListItem,Isize} from "./interface"
+
 
 const Frame = styled.div<{size:Isize}>`
     position:absolute;
@@ -9,12 +9,13 @@ const Frame = styled.div<{size:Isize}>`
     left:0;
     width: 100%;
     border-radius: 16px;
-    background: #28232E;
+    background: #2B292E;
     padding:8px;
 `
 
 const ItemFrame = styled.div`
     padding:10px;
+    height: 40px;
     display: flex;
     align-items:center;
     gap:8px;
@@ -22,27 +23,31 @@ const ItemFrame = styled.div`
     font-size: 17px;
     letter-spacing: 0.17px;
     cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;
 `
 
-function MultiSelectListItem({option,chekboxAction}:IMultiSelectListItem) {
+function DropDownItem({option,selectItem}:IDropDownListItem) {
     return (
-      <ItemFrame onClick={()=>chekboxAction(option)}>
-        <Checkbox checked={option.checked} action={(value)=>console.log(value)}/>
+      <ItemFrame onClick={()=>selectItem(option)}>
         {option.text}
       </ItemFrame>
     );
   }
 
-function MultiSelectList({options,size,chekboxAction}:IMultiSelectList) {
+function DropDownList({options,size,selectItem}:IDropDownList) {
   return (
     <Frame size={size}>
         {
             options.map((item:IOption)=>{
-                return <MultiSelectListItem option={item} chekboxAction={chekboxAction}/>
+                return <DropDownItem option={item} selectItem={selectItem}/>
             })
         }
     </Frame>
   );
 }
 
-export default MultiSelectList;
+export default DropDownList;

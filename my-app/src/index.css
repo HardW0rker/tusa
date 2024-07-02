@@ -4,6 +4,7 @@
   --white-95: rgba(255, 255, 255, 0.95);
   --white-75: rgba(255, 255, 255, 0.75);
   --white-65: rgba(255, 255, 255, 0.65);
+  --white-4: rgba(255, 255, 255, 0.04);
   --btn-background-primery: linear-gradient(
     148deg,
     #5202af 27.91%,
@@ -22,10 +23,13 @@
   );
   --text-primary: rgba(255, 255, 255, 0.95);
   --text-placeholder: rgba(255, 255, 255, 0.3);
-  --text-secondary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.65);
   --text-disable: rgba(255, 255, 255, 0.45);
   --check-false: rgba(255, 255, 255, 0.07);
   --primery: #7d2eff;
+  --background-floor1:rgba(255, 255, 255, 0.04);
+  --icon-secondary:#DBDBDB;
+  --icon-primary: rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -36,4 +40,33 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-style: normal;
+}
+.noUi-pips{
+  display: none !important;
+}
+.noUi-connect{
+  background-color: var(--primery)  !important;
+}
+.noUi-target{
+  background-color: var(--background-floor1)  !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.noUi-handle{
+  width: 24px !important;
+  height: 24px !important;
+  border:5px solid #fff !important;
+  right: -12px !important;
+  top: -9px !important;
+  border-radius: 24px !important;
+}
+.noUi-touch-area{
+  background-color: var(--primery);
+  border-radius: 24px;
+}
+.noUi-handle:before{
+  display: none !important;
+}
+.noUi-handle:after{
+  display: none !important;
 }

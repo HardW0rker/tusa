@@ -5,6 +5,7 @@ import Title from '../../components/homePage/title/title';
 import LocationSelection from '../../components/homePage/locationSelection/locationSelection';
 import Carusel from "../../components/homePage/carusel/carusel";
 import Baners from "../../components/homePage/baners/baners";
+import DropDown from "../../components/minorComponents/dropDown/dropDown";
 
 function HomePage() {
   return (
@@ -14,7 +15,6 @@ function HomePage() {
         <LocationSelection/>
         <Carusel/>
         <Baners/>
-        
     </Page>
   );
 }
