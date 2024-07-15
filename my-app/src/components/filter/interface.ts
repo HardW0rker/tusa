@@ -1,4 +1,7 @@
 import React from "react";
+import LocationSelect from "./filterWidgets/locationSelect/LocationSelect";
+import LocationSelectList from "./filterWidgets/locationSelect/LocationSelectList";
+import {IOption} from "../minorComponents/dropDown/interface";
 
 export interface IFilter {
     open:boolean,
@@ -43,6 +46,27 @@ export interface IRangeOptionsCount {
     count:number,
 }
 
-
+export interface IRangeTime {
+    min:string,
+    max:string,
+}
+export interface ILocationSelectValue {
+    color:string,
+    text:string,
+}
+export interface ILocationSelectList {
+    top?:string,
+    options:Array<ILocationSelectValue>,
+    selectItem: (option: ILocationSelectValue) => void;
+}
+export interface ILocationSelectItem{
+    option:ILocationSelectValue,
+    selectItem: (option: ILocationSelectValue) => void;
+}
+export interface ILocationSelectValueItem{
+    color:string,
+    text:string,
+    deleteItem:(value:ILocationSelectValue) => void;
+}
 
 

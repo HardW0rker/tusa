@@ -21,17 +21,26 @@ const InputRange = styled.div<{}>`
 function RangeInput({min, max, options, changeValue,optionsCount=[], value, type}: IRangeInput) {
     const sliderRef: React.Ref<HTMLDivElement> = useRef<HTMLDivElement>(null);
     const [initSlider, setInitSlider] = useState<boolean>(false)
+
+    function getNearestValue(value:number):number{
+        if(options.indexOf(value) !== -1){
+            return options.indexOf(value)
+        }
+        else{
+            return options.filter((item:number)=>item < value).length
+        }
+    }
     useEffect(() => {
         if (sliderRef.current && initSlider) {
             //@ts-ignore
-            sliderRef.current.noUiSlider.set([options.indexOf(value[0]), options.indexOf(value[1])]);
+            sliderRef.current.noUiSlider.set([getNearestValue(value[0]), getNearestValue(value[1])]);
         }
     }, [value, initSlider])
 
     useEffect(() => {
         if (sliderRef.current && !initSlider) {
             noUiSlider.create(sliderRef.current, {
-                start: [options.indexOf(min), options.indexOf(max)],
+                start: [getNearestValue(min), getNearestValue(max)],
                 step: 1,
                 connect: [false, true, false],
                 range: {

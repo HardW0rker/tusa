@@ -6,7 +6,7 @@ import {ReactComponent as TestIcon} from "../../assets/filter/testIcon.svg";
 function Filter({open, onClose}: IFilter) {
     // options={Array(101).fill(0).map((_, i: number) => (i * (max - min) / 100) + min)}
     const tempOptions =Array(101).fill(0).map((_, i: number) => {
-        return {value:i * (10000 - 500) / 100 + 500,count:i * 500}
+        return {value:i * (10000 - 500) / 100 + 500,count:Math.random()*100}
     })
 
     const data = [
@@ -105,6 +105,19 @@ function Filter({open, onClose}: IFilter) {
             optionsCount:tempOptions,
             unit:"₽",
         },
+        {
+            type: "rangeTime",
+            min:"23:00",
+            max:"05:00",
+            header: "Время работы заведения",
+        },
+        {
+            type: "locationSelect",
+            header: "Метро",
+        },
+
+
+
     ]
     return (
         <>

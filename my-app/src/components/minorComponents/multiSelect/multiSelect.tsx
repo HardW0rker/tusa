@@ -15,7 +15,7 @@ const Frame = styled.div<{ size: Isize, open: boolean }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: ${({size}) => size === "Big" ? "12.5px 20px" : "7.5px 16px"};
+    padding: ${({size}) => size === "Big" ? "11.97px 20px" : "7.5px 16px"};
     background: var(--btn-background-secondary);
     border-radius: ${({size}) => size === "Big" ? "20px" : "16px"};
     border: ${({open}) => open ? "1.5px solid var(--primery);" : "1.5px solid transparent"};

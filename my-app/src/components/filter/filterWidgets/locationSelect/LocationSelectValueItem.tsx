@@ -1,11 +1,14 @@
 import styled from 'styled-components';
-import {IDropDownList,IOption,IDropDownListItem,Isize} from "./interface"
+import {
+    ILocationSelectValueItem
+} from "../../interface";
 
 
-const Frame = styled.div<{size:Isize}>`
+const Frame = styled.div`
     position:absolute;
+    max-width: 456px;
     z-index:10;
-    top:${({ size }) => size === "Big" ? "80px" : "66px"};
+    top:66px;
     left:0;
     width: 100%;
     border-radius: 16px;
@@ -34,25 +37,21 @@ const ItemFrame = styled.div`
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;
 `
+const Indicator = styled.div<{color:string}>`
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 32px;
+    border:5px solid #343434;
+    background:${({ color }) => color};
+`
 
-function DropDownItem({option,selectItem}:IDropDownListItem) {
+function LocationSelectValueItem({color,text,deleteItem}:ILocationSelectValueItem) {
     return (
-      <ItemFrame onClick={()=>selectItem(option)}>
-        {option.text}
-      </ItemFrame>
+        <ItemFrame>
+            <Indicator color={color}/>
+            {text}
+        </ItemFrame>
     );
-  }
-
-function DropDownList({options,size,selectItem}:IDropDownList) {
-  return (
-    <Frame size={size}>
-        {
-            options.map((item:IOption)=>{
-                return <DropDownItem option={item} selectItem={selectItem}/>
-            })
-        }
-    </Frame>
-  );
 }
 
-export default DropDownList;
+export default LocationSelectValueItem;

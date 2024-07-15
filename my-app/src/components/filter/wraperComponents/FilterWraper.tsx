@@ -68,7 +68,7 @@ const Footer = styled.div<{}>`
 function FilterWraper({onClose, children}: IFilterWraper) {
     const frameRef: React.Ref<HTMLDivElement> = useRef<HTMLDivElement>(null);
     return (
-        <Warper onClick={(e) => {
+        <Warper onMouseDown={(e) => {
             if (!frameRef.current?.contains(e.target as Node)) {
                 onClose()
             }
