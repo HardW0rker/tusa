@@ -43,7 +43,6 @@ function Carusel() {
   const [rightVisable,setRightVisable] = useState<boolean>(false)
   // Пофиксить 
   function checkVisable(value:number){
-    console.log(value)
     if(frameList.current){
       value <= 0 ? setLeftVisable(false) : setLeftVisable(true)
       frameList.current.clientWidth < frameList.current.scrollWidth - value - 1 
@@ -52,7 +51,6 @@ function Carusel() {
     }
   }
   function wheelFunction(event:any){
-    console.log(event.deltaY);
     if(frameList.current){
       const scrollLeft = frameList.current.scrollLeft += event.deltaY > 0 ? 420 : -420;
       checkVisable(scrollLeft)

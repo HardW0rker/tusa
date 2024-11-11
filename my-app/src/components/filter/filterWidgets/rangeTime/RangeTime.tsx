@@ -66,7 +66,7 @@ function RangeTime({min, max}: IRangeTime) {
                           options={options}
                           value={minCurrent} size={"Small"}/>
                 <DashIcon/>
-                <DropDown selectItem={(value: IOption) => setMaxCurrent(value)} title={"Максимум"}
+                <DropDown selectItem={(value: IOption) => setMaxCurrent(value)} title={"До"}
                           options={options.filter((item: {value:string, text:string}) => comparison(item.value, minCurrent.value))}
                           value={maxCurrent} size={"Small"}/>
             </DropDownFrame>

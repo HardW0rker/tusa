@@ -2,20 +2,25 @@ import styled from 'styled-components';
 import {ILocationSelectItem, ILocationSelectList, ILocationSelectValue} from "../../interface";
 
 
-const Frame = styled.div<{top?:string}>`
+const Frame = styled.div<{top?:number}>`
     position:absolute;
     max-width: 456px;
     z-index:10;
-    top:${({ top }) => top ? top+"px" : "66px"};
+    top:${({ top }) => top ? (top+8)+"px" : "66px"};
     left:0;
     width: 100%;
     border-radius: 16px;
     background: #111012;
     padding:8px;
-    max-height: 320px;
+    max-height: 175px;
     overflow: auto;
     &::-webkit-scrollbar {
-        width: 0px;
+        width: 0;
+    }
+    &>p{
+        padding:8px;
+        font-size: 17px;
+        letter-spacing: 0.17px;
     }
 `
 
@@ -53,13 +58,13 @@ function LocationSelectItem({option,selectItem}:ILocationSelectItem) {
 }
 
 function LocationSelectList({options,selectItem,top}:ILocationSelectList) {
-    console.log(top)
     return (
         <Frame top={top}>
             {
-                options.map((item:ILocationSelectValue)=>{
-                    return <LocationSelectItem option={item} selectItem={selectItem}/>
+                options.length ?  options.map((item:ILocationSelectValue)=>{
+                    return <LocationSelectItem option={item} selectItem={selectItem} key={item.text}/>
                 })
+                    : <p>Нет подходящих вариантов</p>
             }
         </Frame>
     );

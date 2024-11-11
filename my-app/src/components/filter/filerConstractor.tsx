@@ -27,7 +27,7 @@ function FilterConsstractor({config}: any) {
             {
                 config.map((item:any) => {
                     return (
-                        <FilterWidgetsWraper header={item.header} key={item}>
+                        <FilterWidgetsWraper header={item.header} key={item} hasHide={item?.hasHide}>
                             {renderWidget(item)}
                         </FilterWidgetsWraper>
                     )

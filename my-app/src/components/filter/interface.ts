@@ -18,6 +18,7 @@ export interface IFilterItemWraper {
 export interface IFilterWidgetsWraper {
     header:string,
     children: React.ReactNode
+    hasHide?:boolean
 }
 
 export interface IChips {
@@ -55,7 +56,7 @@ export interface ILocationSelectValue {
     text:string,
 }
 export interface ILocationSelectList {
-    top?:string,
+    top?:number,
     options:Array<ILocationSelectValue>,
     selectItem: (option: ILocationSelectValue) => void;
 }
@@ -66,7 +67,8 @@ export interface ILocationSelectItem{
 export interface ILocationSelectValueItem{
     color:string,
     text:string,
-    deleteItem:(value:ILocationSelectValue) => void;
+    deleteItem:(value:number) => void;
+    index:number
 }
 
 

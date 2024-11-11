@@ -65,16 +65,16 @@ function Range({min, max, unit, options = [], optionsCount = [], type}: IRange) 
 
                     type === "Default" ?
                         <>
-                            <DropDown selectItem={(value: IOption) => setMinCurrent(value)} title={"Минимум"}
-                                      options={options.map((item: number) => {
-                                          return {value: item.toString(), text: `${item + " " + unit}`}
-                                      })} value={minCurrent} size={"Small"}/>
+                            <Input value={minCurrent.value}
+                                   type={"Double"}
+                                   placeholder={'от ' + min}
+                                   title={"Минимум"}
+                                   changeValue={(value: string) => changeValueBar(value, "min")}/>
                             <DashIcon/>
-                            <DropDown selectItem={(value: IOption) => setMaxCurrent(value)} title={"Максимум"}
-                                      options={options.filter((item: number) => Number(item) >= Number(minCurrent.value)).map((item: number) => {
-                                          return {value: item.toString(), text: `${item + " " + unit}`}
-                                      })}
-                                      value={maxCurrent} size={"Small"}/>
+                            <Input value={maxCurrent.value} type={"Double"} placeholder={'до ' + max}
+                                   title={"Максимум"}
+                                   changeValue={(value: string) => changeValueBar(value, "max")}/>
+
                         </>
                         :
                         <>
@@ -83,6 +83,7 @@ function Range({min, max, unit, options = [], optionsCount = [], type}: IRange) 
                                    placeholder={'от ' + min}
                                    title={"Минимум"}
                                    changeValue={(value: string) => changeValueBar(value, "min")}/>
+                            <DashIcon/>
                             <Input value={maxCurrent.value} type={"Double"} placeholder={'до ' + max}
                                    title={"Максимум"}
                                    changeValue={(value: string) => changeValueBar(value, "max")}/>

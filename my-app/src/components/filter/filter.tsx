@@ -9,6 +9,12 @@ function Filter({open, onClose}: IFilter) {
         return {value:i * (10000 - 500) / 100 + 500,count:Math.random()*100}
     })
 
+    function getOptions(min:number, max: number){
+        return Array(max-min+1).fill(0).map((_, i: number) => {
+            return i + min
+        })
+    }
+
     const data = [
         {
             type: "chip",
@@ -93,9 +99,7 @@ function Filter({open, onClose}: IFilter) {
             min:16,
             max:60,
             unit:"лет",
-            options:[
-                16,20,24,30,40,50,60
-            ]
+            options:getOptions(16,60)
         },
         {
             type: "rangebar",
@@ -110,6 +114,7 @@ function Filter({open, onClose}: IFilter) {
             min:"23:00",
             max:"05:00",
             header: "Время работы заведения",
+            hasHide:true,
         },
         {
             type: "locationSelect",

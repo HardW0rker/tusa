@@ -21,6 +21,7 @@ const Title = styled.div`
 
 
 const InputFrame = styled.div<{type:Itype}>`
+    width: 100%;
     max-width: 100%;
     display: flex;
     color: var(--text-primary);
@@ -28,6 +29,7 @@ const InputFrame = styled.div<{type:Itype}>`
     letter-spacing: 0.19px;
 `
 const InputField = styled.input<{type:Itype, value:string}>`
+    width: 100%;
     background: transparent;
     overflow: hidden;
     color: var(--text-primary);
