@@ -1,0 +1,28 @@
+.checkInput {
+  width: 45px;
+  height: 25px;
+  border-radius: 12px;
+  padding: 3px 4px;
+  transition: 0.5s;
+  background: var(--check-false);
+  border: none;
+
+  &-checked {
+    background: var(--primery);
+  }
+
+  &__pointer {
+    position: relative;
+    height: 19px;
+    width: 19px;
+    border-radius: 19px;
+    transition: 0.5s;
+    left: 0;
+    background: #AEAFAF;
+
+    &-checked {
+      left: 19px;
+      background: var(--white);
+    }
+  }
+}

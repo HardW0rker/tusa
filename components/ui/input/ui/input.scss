@@ -1,0 +1,58 @@
+.input {
+  width: 100%;
+  display: flex;
+  background: var(--btn-background-secondary);
+  flex-direction: column;
+  height: 56px;
+  padding: 6px 16px;
+  align-items: flex-start;
+  border-radius: 16px;
+  gap: 6px;
+
+  &-default {
+    flex-direction: row;
+    height: 70px;
+    padding: 16px 20px;
+    align-items: center;
+    border-radius: 20px;
+    gap: 8px;
+  }
+
+  &__title {
+    color: var(--text-inputLabel);
+    font-size: 13px;
+    letter-spacing: 0.13px;
+  }
+
+  &__frame {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    color: var(--text-primary);
+    letter-spacing: 0.19px;
+    font-size: 19px;
+
+    &-default {
+      font-size: 15px;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+    color: var(--text-primary);
+    letter-spacing: 0.19px;
+    border: none;
+    outline: none;
+    font-size: 19px;
+
+    &::placeholder {
+      color: var(--text-placeholder);
+    }
+
+    &-default {
+      font-size: 15px;
+    }
+  }
+}

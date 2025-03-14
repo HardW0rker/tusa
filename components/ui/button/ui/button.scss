@@ -1,0 +1,89 @@
+.button {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  border-radius: 14px;
+  padding: 18px;
+  cursor: pointer;
+  background: var(--btn-background-primery);
+  box-shadow: 0 4px 19.8px 0 rgba(125, 55, 207, 0.17), 0px -2px 5.5px 0px rgba(90, 13, 181, 0.30), 1px 4px 4.2px 0px rgba(118, 47, 202, 0.13);
+  border:none;
+
+  &::before {
+    border-radius: 14px;
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-image: var(--btn-background-primery-hover);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+
+  &:hover::before {
+    opacity: 1
+  }
+
+  p {
+    position: relative;
+    z-index: 2;
+    color: var(--text-primary);
+    font-size: 17px;
+    letter-spacing: 0.17px;
+    line-height: 24px;
+  }
+
+  svg {
+    position: relative;
+    z-index: 2;
+
+    path {
+      fill: var(--text-primary)
+    }
+  }
+
+  &-big {
+    padding: 19px;
+  }
+
+  &-secondary {
+    background: var(--btn-background-secondary);
+    transition: background 0.35s;
+    box-shadow: none;
+
+    &:hover::before {
+      opacity: 0
+    }
+
+    &:hover {
+      background: var(--btn-background-secondary-hover)
+    }
+  }
+
+  &-disable {
+    cursor: default;
+    background: var(--btn-background-disable);
+    box-shadow: none;
+
+    &:hover::before {
+      opacity: 0
+    }
+
+    &:hover {
+      background: var(--btn-background-disable)
+    }
+
+    p {
+      color: var(--text-disable);
+    }
+
+    svg {
+      path {
+        fill: var(--text-disable)
+      }
+    }
+  }
+
+}

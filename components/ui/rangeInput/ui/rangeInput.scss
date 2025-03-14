@@ -1,0 +1,34 @@
+.range-input {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+
+  &-default {
+    height: 46px
+  }
+
+  &__range {
+    width: 100%;
+    height: 6px;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+    gap: 1px;
+
+    &-element {
+      display: flex;
+      width: 100%;
+      border-radius: 2px 2px 0 0;
+      opacity: 0.59;
+      background-color: var(--background-floor1);
+
+      &-active {
+        background-color: var(--primery)
+      }
+    }
+  }
+}

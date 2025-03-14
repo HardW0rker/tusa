@@ -1,26 +1,146 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: linear-gradient(117deg, #18181a 0.86%, #241b2c 122.39%);
+    --white: rgba(255, 255, 255, 1);
+    --white-95: rgba(255, 255, 255, 0.95);
+    --white-75: rgba(255, 255, 255, 0.75);
+    --white-65: rgba(255, 255, 255, 0.65);
+    --white-4: rgba(255, 255, 255, 0.04);
+    --btn-background-primery: linear-gradient(
+            148deg,
+            #5202af 27.91%,
+            #bc84fc 149.4%
+    );
+    --btn-background-primery-hover: linear-gradient(
+            148deg,
+            #7f1bf4 27.91%,
+            #faf5ff 149.4%
+    );
+    --btn-background-secondary: rgba(255, 255, 255, 0.07);
+    --btn-background-secondary-hover: rgba(255, 255, 255, 0.15);
+    --btn-background-disable: rgba(255, 255, 255, 0.03);
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-inputLabel: rgba(255, 255, 255, 0.8);
+    --text-placeholder: rgba(255, 255, 255, 0.3);
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --text-disable: rgba(255, 255, 255, 0.45);
+    --check-false: rgba(255, 255, 255, 0.07);
+    --primery: #7d2eff;
+    --background-floor1: rgba(255, 255, 255, 0.04);
+    --icon-secondary: #DBDBDB;
+    --icon-primary: rgba(255, 255, 255, 0.9);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+    scroll-behavior: smooth;
+    height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    max-width: 100vw;
+    min-height:100vh;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    background:var(--background);
 }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    padding-left: 0;
+}
+
+blockquote,
+figure {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl {
+    margin-block: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+svg * {
+    transition-property: fill, stroke;
+}
+
+
+.noUi-pips {
+    display: none !important;
+}
+
+.noUi-connect {
+    background-color: var(--primery) !important;
+}
+
+.noUi-target {
+    background-color: var(--background-floor1) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.noUi-handle {
+    width: 24px !important;
+    height: 24px !important;
+    border: 5px solid #fff !important;
+    right: -12px !important;
+    top: -9px !important;
+    border-radius: 24px !important;
+}
+
+.noUi-touch-area {
+    background-color: var(--primery);
+    border-radius: 24px;
+}
+
+.noUi-handle:before {
+    display: none !important;
+}
+
+.noUi-handle:after {
+    display: none !important;
+}
+
